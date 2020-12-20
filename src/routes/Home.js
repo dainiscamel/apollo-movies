@@ -59,8 +59,11 @@ const Movies = styled.div`
   top: -50px;
 `;
 
-export default () => {
-  const { loading, data } = useQuery(GET_MOVIES);
+export default (isLiked) => {
+  
+  const { loading, data } = useQuery(GET_MOVIES, {
+    variables: { isLiked }
+  });
   return (
     <Container>
       <Header>
